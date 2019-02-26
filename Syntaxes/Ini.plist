@@ -79,23 +79,7 @@
 				</dict>
 			</array>
 		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.other.definition.ini</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.separator.key-value.ini</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>\b([a-zA-Z0-9_.-]+)\b\s*(=)</string>
-		</dict>
+		<!--[section group title]-->
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -115,6 +99,25 @@
 			<key>name</key>
 			<string>entity.name.section.group-title.ini</string>
 		</dict>
+		<!--Key (anything on the left hand side of an equal sign is considered a key)-->
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.definition.ini</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.ini</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b([^=]+)\b\s*(=)</string>
+		</dict>
+        <!--KeyValue (on the right hand side of an equal, we'd like to have type dectection)-->
 		<dict>
 			<key>begin</key>
 			<string>=\s*\K\s*'</string>
